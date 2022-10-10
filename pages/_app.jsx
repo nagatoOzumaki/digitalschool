@@ -3,7 +3,7 @@ import '../styles/globals.css';
 import { hotjar } from 'react-hotjar';
 import { Head } from 'next/head';
 import { useRouter } from 'next/router';
-import gtag, { TRACKING_ID } from '../utils/gtag';
+import { gtag, TRACKING_ID } from '../utils/gtag';
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
     hotjar.initialize(3189697, 6);
