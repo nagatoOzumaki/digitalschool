@@ -3,7 +3,7 @@ import '../styles/globals.css';
 import { hotjar } from 'react-hotjar';
 import { Head } from 'next/head';
 import { useRouter } from 'next/router';
-import gtag from '../utils/gtag';
+import gtag, { TRACKING_ID } from '../utils/gtag';
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
     hotjar.initialize(3189697, 6);
@@ -54,7 +54,7 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <script
           async
-          src='https://www.googletagmanager.com/gtag/js?id=TRACKING-ID'
+          src={`https://www.googletagmanager.com/gtag/js?id= ${TRACKING_ID}`}
         ></script>
         <script
           dangerouslySetInnerHTML={{
@@ -62,7 +62,7 @@ function MyApp({ Component, pageProps }) {
    window.dataLayer = window.dataLayer || [];
    function gtag(){dataLayer.push(arguments);}
    gtag('js', new Date());
-   gtag('config', 'TRACKING-ID');`,
+   gtag('config', ${TRACKING_ID});`,
           }}
         ></script>
       </Head>
