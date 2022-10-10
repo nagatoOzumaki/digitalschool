@@ -3,7 +3,7 @@ import '../styles/globals.css';
 import { hotjar } from 'react-hotjar';
 import { Head } from 'next/head';
 import { useRouter } from 'next/router';
-import { gtag, TRACKING_ID } from '../utils/gtag';
+import { pageview, TRACKING_ID } from '../utils/gtag';
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
     hotjar.initialize(3189697, 6);
@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
   const router = useRouter();
   useEffect(() => {
     const handleRouteChange = (url) => {
-      gtag.pageview(url);
+      pageview(url);
     };
     router.events.on('routeChangeComplete', handleRouteChange);
     return () => {
@@ -51,7 +51,7 @@ function MyApp({ Component, pageProps }) {
           }}
         ></script> */}
       {/* </Head> */}
-      <Head>
+      {/* <Head>
         <script
           async
           src={`https://www.googletagmanager.com/gtag/js?id= ${TRACKING_ID}`}
@@ -64,8 +64,8 @@ function MyApp({ Component, pageProps }) {
    gtag('js', new Date());
    gtag('config', ${TRACKING_ID});`,
           }}
-        ></script>
-      </Head>
+        ></script> */}
+      {/* </Head> */}
       <Component {...pageProps} />
     </>
   );
