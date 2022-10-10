@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import '../styles/globals.css';
 import { hotjar } from 'react-hotjar';
-import { Head } from 'next/document';
+import { Head } from 'next/head';
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -9,8 +9,8 @@ function MyApp({ Component, pageProps }) {
   }, []);
   return (
     <>
-      <Head>
-        <script
+      {/* <Head>
+        {/* <script
           async
           src='https://www.googletagmanager.com/gtag/js?id=TRACKING-ID'
         ></script>
@@ -22,8 +22,8 @@ function MyApp({ Component, pageProps }) {
    gtag('js', new Date());
    gtag('config', 'TRACKING-ID');`,
           }}
-        ></script>
-      </Head>
+        ></script> */}
+      {/* </Head> */}
       <Component {...pageProps} />
     </>
   );
