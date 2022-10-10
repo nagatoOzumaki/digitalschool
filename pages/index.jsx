@@ -8,8 +8,6 @@ import { useEffect } from 'react';
 import MyAppBar from '../components/MyAppBar';
 
 const Home = () => {
-  useEffect(() => {}, []);
-
   return (
     <div className={styles.container}>
       <Head>
