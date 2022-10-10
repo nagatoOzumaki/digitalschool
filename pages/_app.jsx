@@ -3,7 +3,8 @@ import '../styles/globals.css';
 import { hotjar } from 'react-hotjar';
 import { Head } from 'next/head';
 import { useRouter } from 'next/router';
-import { pageview, TRACKING_ID } from '../utils/gtag';
+import * as gtag from '../utils/gtag';
+import Script from 'next/script';
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
     hotjar.initialize(3189697, 6);
@@ -66,6 +67,25 @@ function MyApp({ Component, pageProps }) {
           }}
         ></script> */}
       {/* </Head> */}
+      <Script
+        strategy='afterInteractive'
+        src={`https://www.googletagmanager.com/gtag/js?id=${gtag.TRACKING_ID}`}
+      ></Script>
+      <Script
+        id='google-analytics'
+        strategy='afterInteractive'
+        dangerouslySetInnerHTML={{
+          __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', ${gtag.TRACKING_ID}, {
+            page_path: window.location.pathname,
+          });
+        `,
+        }}
+      />
+
       <Component {...pageProps} />
     </>
   );
