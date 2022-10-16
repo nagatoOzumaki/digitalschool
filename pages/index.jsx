@@ -23,6 +23,7 @@ import {
   Instagram,
   LinkedIn,
   Mail,
+  Phone,
   ShoppingBag,
   WhatsApp,
 } from '@mui/icons-material';
@@ -118,6 +119,17 @@ const Home = () => {
           >
             WhatsaApp
             <WhatsApp />
+          </Link>
+          <Link
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              fontWeight: 'bold',
+              gap: 1,
+            }}
+          >
+            Telephone Fix
+            <Phone />
           </Link>
           <Link
             sx={{
