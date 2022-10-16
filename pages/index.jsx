@@ -1,12 +1,4 @@
-import {
-  Box,
-  CardMedia,
-  Drawer,
-  Fab,
-  Link,
-  Paper,
-  Typography,
-} from '@mui/material';
+import { Box, Link, Paper, Typography } from '@mui/material';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
@@ -21,7 +13,6 @@ import Image3 from '../public/images/3.png';
 // import Player from 'video-react';
 import Image4 from '../public/images/4.png';
 import ReactPlayer from 'react-player';
-import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 import MyAppBar from '../components/MyAppBar';
 import Footer from '../components/Footer';
@@ -65,84 +56,91 @@ const Home = () => {
         elevation={3}
         sx={{
           position: 'absolute',
+
           left: 0,
-          // backgroundColor: '#eee',
           width: 360,
           height: 3000,
           p: 10,
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 5,
         }}
       >
-        <Typography sx={{ fontWeight: 'bold', ml: -4, fontSize: 18 }}>
-          Nos plateformes digitales
-        </Typography>
-        <Link
+        <Box
           sx={{
+            position: 'sticky',
+            top: 100,
             display: 'flex',
-            alignItems: 'center',
-            fontWeight: 'bold',
-            gap: 1,
+            flexDirection: 'column',
+            gap: 5,
           }}
         >
-          School Shoppify
-          <ShoppingBag />
-        </Link>
-        <Link
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            fontWeight: 'bold',
-            gap: 1,
-          }}
-        >
-          Facebook
-          <Facebook />
-        </Link>
-        <Link
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            fontWeight: 'bold',
-            gap: 1,
-          }}
-        >
-          Instagram
-          <Instagram />
-        </Link>
-        <Link
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            fontWeight: 'bold',
-            gap: 1,
-          }}
-        >
-          WhatsaApp
-          <WhatsApp />
-        </Link>
-        <Link
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            fontWeight: 'bold',
-            gap: 1,
-          }}
-        >
-          Gmail
-          <Mail />
-        </Link>
-        <Link
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            fontWeight: 'bold',
-            gap: 1,
-          }}
-        >
-          Linked In <LinkedIn />
-        </Link>
+          <Typography sx={{ fontWeight: 'bold', ml: -4, fontSize: 18 }}>
+            Nos plateformes digitales
+          </Typography>
+          <Link
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              fontWeight: 'bold',
+              gap: 1,
+            }}
+          >
+            School Shoppify
+            <ShoppingBag />
+          </Link>
+          <Link
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              fontWeight: 'bold',
+              gap: 1,
+            }}
+          >
+            Facebook
+            <Facebook />
+          </Link>
+          <Link
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              fontWeight: 'bold',
+              gap: 1,
+            }}
+          >
+            Instagram
+            <Instagram />
+          </Link>
+          <Link
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              fontWeight: 'bold',
+              gap: 1,
+            }}
+          >
+            WhatsaApp
+            <WhatsApp />
+          </Link>
+          <Link
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              fontWeight: 'bold',
+              gap: 1,
+            }}
+          >
+            Gmail
+            <Mail />
+          </Link>
+          <Link
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              fontWeight: 'bold',
+              gap: 1,
+            }}
+          >
+            Linked In <LinkedIn />
+          </Link>
+        </Box>
       </Paper>
       <Container
         sx={{
@@ -156,8 +154,7 @@ const Home = () => {
         }}
       >
         {/* https://youtu.be/VPyi4ZTHvio     https://youtu.be/uOYMr3Ukkac */}
-        <Image alt='alt' width={1500} src={Poster} />
-
+        {/* <Image alt='alt' width={1500} src={Poster} /> */}
         {/* <vedio autoPlay style={{ width: '500px', height: '500px' }}>
           <source
             src='https://youtu.be/VPyi4ZTHvio'
@@ -180,13 +177,13 @@ const Home = () => {
         {/* <Image alt='alt' src={Image1} />
         <Image alt='alt' src={Image2} />
         <Image alt='alt' src={Image3} /> */}
+        <Image alt='alt' width={1500} height={1000} src={Background} />{' '}
         <ReactPlayer
           width={1150}
           height={1000}
           playing={true}
           url='https://youtu.be/uOYMr3Ukkac '
         />
-        <Image alt='alt' width={1500} height={1000} src={Background} />
       </Container>
       {/* <Footer /> */}
     </div>
@@ -194,44 +191,3 @@ const Home = () => {
 };
 
 export default Home;
-function Card({ index }) {
-  const [isHovered, setIsHovered] = useState(false);
-  const trailer = 'https://youtu.be/VPyi4ZTHvio';
-
-  return (
-    <div
-      className='card'
-      style={{ left: isHovered && index * 225 - 50 + index * 2.5 }}
-      onMouseEnter={() => {
-        setIsHovered(true);
-      }}
-      onMouseLeave={() => {
-        setIsHovered(false);
-      }}
-    >
-      <img
-        src='https://ih1.redbubble.net/image.385613112.4548/fposter,small,wall_texture,product,750x1000.u4.jpg'
-        alt=''
-      />
-      {isHovered && (
-        <>
-          <video controls muted AutoPlay loop>
-            <source src={trailer} type='video/mp4'></source>
-          </video>
-          {/* <div className='cardInfo'>
-            <span>1hour 52 mins</span>
-            <span>4.5⭐</span>
-            <span>1954</span>
-          </div> */}
-          {/* <div className='desc'>
-            A wheelchair-bound photographer spies on his neighbors from his
-            Greenwich Village courtyard apartment window, and becomes convinced
-            one of them has committed murder, despite the skepticism of his
-            fashion-model girlfriend.
-          </div> */}
-          <div className='genre'>Thriller</div>
-        </>
-      )}
-    </div>
-  );
-}

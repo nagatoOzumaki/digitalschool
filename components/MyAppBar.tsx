@@ -132,7 +132,7 @@ export default function MyAppbar() {
             variant='h6'
             noWrap
             component='div'
-            sx={{ display: { xs: 'none', sm: 'block' } }}
+            sx={{ display: { xs: 'none', sm: 'block' }, fontWeight: 'bold' }}
           >
             Digital School
           </Typography>
