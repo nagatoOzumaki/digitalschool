@@ -22,51 +22,6 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-      {/* 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NRF00L70Z6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-NRF00L70Z6');
-</script>
-
-
-
-*/}
-
-      {/* <Head>
-        {/* <script
-          async
-          src='https://www.googletagmanager.com/gtag/js?id=TRACKING-ID'
-        ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-   window.dataLayer = window.dataLayer || [];
-   function gtag(){dataLayer.push(arguments);}
-   gtag('js', new Date());
-   gtag('config', 'TRACKING-ID');`,
-          }}
-        ></script> */}
-      {/* </Head> */}
-      {/* <Head>
-        <script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id= ${TRACKING_ID}`}
-        ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-   window.dataLayer = window.dataLayer || [];
-   function gtag(){dataLayer.push(arguments);}
-   gtag('js', new Date());
-   gtag('config', ${TRACKING_ID});`,
-          }}
-        ></script> */}
-      {/* </Head> */}
       <Script
         strategy='afterInteractive'
         src={`https://www.googletagmanager.com/gtag/js?id=${gtag.TRACKING_ID}`}
