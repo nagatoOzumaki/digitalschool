@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-      <Head>
+      <head>
         {/* <!-- ManyChat --> */}
         <script
           src='//widget.manychat.com/111723925049819.js'
@@ -32,7 +32,7 @@ function MyApp({ Component, pageProps }) {
           src='https://mccdn.me/assets/js/widget.js'
           defer='defer'
         ></script>
-      </Head>
+      </head>
       <Script
         strategy='afterInteractive'
         src={`https://www.googletagmanager.com/gtag/js?id=${gtag.TRACKING_ID}`}
