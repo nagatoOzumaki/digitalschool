@@ -82,6 +82,7 @@ const Home = () => {
               alignItems: 'center',
               fontWeight: 'bold',
               gap: 1,
+              cursor: 'pointer',
             }}
           >
             School Shoppify
@@ -93,6 +94,7 @@ const Home = () => {
               alignItems: 'center',
               fontWeight: 'bold',
               gap: 1,
+              cursor: 'pointer',
             }}
           >
             Facebook
@@ -104,6 +106,7 @@ const Home = () => {
               alignItems: 'center',
               fontWeight: 'bold',
               gap: 1,
+              cursor: 'pointer',
             }}
           >
             Instagram
@@ -115,6 +118,7 @@ const Home = () => {
               alignItems: 'center',
               fontWeight: 'bold',
               gap: 1,
+              cursor: 'pointer',
             }}
           >
             WhatsaApp
@@ -126,6 +130,7 @@ const Home = () => {
               alignItems: 'center',
               fontWeight: 'bold',
               gap: 1,
+              cursor: 'pointer',
             }}
           >
             Telephone Fix
@@ -137,6 +142,7 @@ const Home = () => {
               alignItems: 'center',
               fontWeight: 'bold',
               gap: 1,
+              cursor: 'pointer',
             }}
           >
             Gmail
@@ -148,6 +154,7 @@ const Home = () => {
               alignItems: 'center',
               fontWeight: 'bold',
               gap: 1,
+              cursor: 'pointer',
             }}
           >
             Linked In <LinkedIn />
