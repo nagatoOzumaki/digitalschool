@@ -1,10 +1,11 @@
 import { useEffect } from 'react';
 import '../styles/globals.css';
 import { hotjar } from 'react-hotjar';
-import { Head } from 'next/head';
 import { useRouter } from 'next/router';
 import * as gtag from '../utils/gtag';
 import Script from 'next/script';
+import NextSeo from 'next-seo';
+
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
     hotjar.initialize(3189697, 6);
@@ -22,6 +23,44 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
+      <NextSeo
+        title='digital school'
+        description='Digital School Cloud | Plateforme pour les cours en ligne .'
+        canonical='https://www.digitalschool-cloud.vercel.app'
+        openGraph={{
+          url: 'https://www.digitalschool-cloud.vercel.app',
+          title: 'digital school',
+          description: 'Open Graph Description',
+          images: [
+            {
+              url: 'https://www.digitalschool-cloud.vercel.app',
+              width: 800,
+              height: 600,
+              alt: 'https://www.digitalschool-cloud.vercel.app',
+              type: 'image/jpeg',
+            },
+            {
+              url: 'https://www.digitalschool-cloud.vercel.app',
+              width: 900,
+              height: 800,
+              alt: 'digitalschool',
+              type: 'image/jpeg',
+            },
+            { url: 'https://www.example.ie/og-image-03.jpg' },
+            { url: 'https://www.example.ie/og-image-04.jpg' },
+          ],
+          site_name: 'https://www.digitalschool-cloud.vercel.app',
+        }}
+        twitter={{
+          handle: 'https://www.digitalschool-cloud.vercel.app',
+          site: 'https://www.digitalschool-cloud.vercel.app',
+          cardType: 'summary_large_image',
+        }}
+        facebook={{
+          appId: '100086524425996',
+        }}
+      />
+
       <head>
         {/* <!-- ManyChat --> */}
         <script
